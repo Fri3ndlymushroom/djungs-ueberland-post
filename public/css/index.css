@@ -1,0 +1,115 @@
+:root {
+    --borderradius: 15px;
+    --borderradius--hover: 30px;
+    --bg--dark: #1f1f1f;
+    --bg--normal: #333333;
+    --bg--bright: #535353;
+    --highlight: #8b43c5;
+}
+
+* {
+    color: white;
+    font-family: Comfortaa;
+}
+
+body {
+    background-color: var(--bg--dark);
+    height: 96vh;
+}
+
+input {
+    outline: none;
+    border: none;
+    background-color: var(--bg--normal);
+    border-radius: var(--borderradius);
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.7s;
+}
+
+input:hover {
+    background-color: var(--bg--bright);
+    border-radius: var(--borderradius--hover);
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: var(--bg--normal);
+    border-radius: var(--borderradius);
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.7s;
+}
+
+button:hover {
+    background-color: var(--highlight);
+    border-radius: var(--borderradius--hover);
+}
+
+#content {
+    display: grid;
+    height: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 100px) minmax(0, 10fr) minmax(0, 100px);
+}
+
+#chat {
+    display: grid;
+    height: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 10fr) minmax(0, 1fr);
+}
+
+#chat__feed {
+    background-color: var(--bg--normal);
+    margin: 20px 20px;
+    border-radius: var(--borderradius);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* input */
+
+#chat__input--section {
+    display: grid;
+    grid-template-columns: minmax(0, 15fr) minmax(0, 70px);
+    margin: 0px 20px;
+    grid-gap: 20px;
+}
+
+#chat__input--field {
+    background-color: var(--bg--normal);
+    height: 100%;
+    padding: 0 20px;
+}
+
+#chat__input--send {
+    width: 70px;
+}
+
+
+/* message */
+
+.message {
+    background-color: var(--bg--dark);
+    max-width: 40%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message--left {
+    border-radius: 0 var(--borderradius) var(--borderradius) var(--borderradius);
+    margin-right: auto;
+}
+
+.message--right {
+    border-radius: var(--borderradius) 0 var(--borderradius) var(--borderradius);
+    margin-left: auto;
+    background-color: var(--highlight);
+}
+
+.message__header--time {}
