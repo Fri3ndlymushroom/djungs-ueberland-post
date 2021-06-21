@@ -22,8 +22,9 @@
     <script defer src="js/firebase.js"></script>
 
     <!-- js -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/81bcf4cf90.js" crossorigin="anonymous"></script>
-    <script defer src="js/index.js"></script>
+
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Comfortaa" />
@@ -37,30 +38,14 @@
         </section>
         <section id="chat">
             <div id="chat__feed">
-                <span class="message message--right">
-                    <span class="message__header">
-                        <span class="message__header--name">Max</span>
-                <span class="message__header--time">15:22</span>
-                </span>
-                <span class="message__message">
-                        Wieso mag mich niemand adlfkf dljfsjf lfjladjfldsj s dafjadl fafjdsfjasdfsdf jdfjl jdlafjk dfasdjf ?
-                    </span>
-                </span>
+                <div id="chat__feed--inner">
 
-                <span class="message message--left">
-                    <span class="message__header">
-                        <span class="message__header--name">Max</span>
-                <span class="message__header--time">15:22</span>
-                </span>
-                <span class="message__message">
-                        Wieso mag mich niemand ljdajfd dlfkadfj ldakjf?
-                    </span>
-                </span>
+                </div>
             </div>
-            <section id="chat__input--section">
+            <form id="chat__input--section">
                 <input id="chat__input--field" placeholder="type boyy...">
-                <button id="chat__input--send" class="fas fa-paper-plane"></button>
-            </section>
+                <button type="submit" id="chat__input--send" class="far fa-paper-plane"></button>
+            </form>
         </section>
 
 
@@ -73,7 +58,7 @@
 
 
 
-
+    <script defer src="js/index.js"></script>
 
 </body>
 

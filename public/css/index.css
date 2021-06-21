@@ -10,6 +10,22 @@
 * {
     color: white;
     font-family: Comfortaa;
+    scrollbar-width: thin;
+    scrollbar-color: transparent
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--bg--normal);
+    border-radius: 6px;
+    border: 2px solid var(--bg--bright);
 }
 
 body {
@@ -65,6 +81,10 @@ button:hover {
     background-color: var(--bg--normal);
     margin: 20px 20px;
     border-radius: var(--borderradius);
+    overflow-y: scroll;
+}
+
+#chat__feed--inner {
     display: flex;
     flex-direction: column;
 }
