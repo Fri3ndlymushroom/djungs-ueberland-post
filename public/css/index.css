@@ -23,7 +23,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--bg--normal);
+    background-color: var(--bg--bright);
     border-radius: 6px;
     border: 2px solid var(--bg--bright);
 }
@@ -106,7 +106,7 @@ button:hover {
 }
 
 #chat__input--send {
-    width: 70px;
+    width: 65px;
 }
 
 
@@ -131,5 +131,3 @@ button:hover {
     margin-left: auto;
     background-color: var(--highlight);
 }
-
-.message__header--time {}
