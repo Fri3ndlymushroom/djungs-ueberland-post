@@ -1,46 +1,11 @@
-db.collection("messages").doc("messages").get().then((doc) => {
-
-    doc.data().messages.forEach(function(message) {
-        // is self
-        let isSelf = false
-
-        if (message.uid == firebase.auth().currentUser.uid) isSelf = true
-
-        // username
-        let username = message.username
-        if (username.length > 10) username = username.slice(2, 10) + "..."
-
-        addMessage(username, message.date, message.message, isSelf)
-    })
-})
-
-db.collection("messages").doc("messages").onSnapshot((doc) => {
-    if (doc.data().messages.length - 1 <= 0) return
-    message = doc.data().messages[doc.data().messages.length - 1]
-
-    // is self
-    let isSelf = false
-
-    if (message.uid == firebase.auth().currentUser.uid) isSelf = true
-
-    // username
-    let username = message.username
-    if (username.length > 10) username = username.slice(2, 10) + "..."
-
-    addMessage(username, message.date, message.message, isSelf)
-});
-
-
-
-
-
-
 messageIndex = 0
 
-function addMessage(username, date, message, isSelf) {
+function addMessage(username, date, message, isSelf, rank) {
 
-    let messageClass = "message--left"
-    if (isSelf) messageClass = "message--right"
+    let messageClassPos = "message--left"
+    if (isSelf) messageClassPos = "message--right"
+
+    let messageClassRank = " messageRank" + rank
 
     let newMessageInnerHTML = `
         <span class="message__header">
@@ -50,7 +15,7 @@ function addMessage(username, date, message, isSelf) {
         <span class="message__message">${message}</span>
         `
     let newMessage = document.createElement("span")
-    newMessage.setAttribute("class", "message " + messageClass)
+    newMessage.setAttribute("class", "message " + messageClassPos + messageClassRank)
     newMessage.setAttribute("id", "message" + messageIndex)
 
     document.getElementById("chat__feed--inner").appendChild(newMessage)
@@ -80,5 +45,5 @@ document.getElementById("chat__input--section").addEventListener("submit", funct
 
 async function sendMessage(message) {
     const sendMessage = firebase.functions().httpsCallable('sendMessage');
-    sendMessage({ message: message, username: info.username })
+    sendMessage({ message: message, rank: 0 })
 }
