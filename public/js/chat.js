@@ -15,6 +15,7 @@ db.collection("messages").doc("messages").get().then((doc) => {
 })
 
 db.collection("messages").doc("messages").onSnapshot((doc) => {
+    if (doc.data().messages.length - 1 <= 0) return
     message = doc.data().messages[doc.data().messages.length - 1]
 
     // is self
@@ -79,5 +80,5 @@ document.getElementById("chat__input--section").addEventListener("submit", funct
 
 async function sendMessage(message) {
     const sendMessage = firebase.functions().httpsCallable('sendMessage');
-    sendMessage({ message: message, username: "Username" })
+    sendMessage({ message: message, username: info.username })
 }
