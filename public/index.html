@@ -46,6 +46,7 @@
                 <input id="chat__input--field" placeholder="type boyy...">
                 <button id="chat__input--img" class="far fa-image"></button>
                 <button type="submit" id="chat__input--send" class="far fa-paper-plane"></button>
+                <button onclick="openRankPopup()" id="chat__input--rank" class="fas fa-tags"></button>
             </form>
         </section>
 
@@ -54,14 +55,25 @@
         <section id="footer">
 
         </section>
-        <section id="username__popup--wrapper">
-            <div id="popup--overlay"></div>
-            <form id="username__popup">
+        <section class="popup--wrapper" id="username__popup--wrapper">
+            <div class="popup--overlay"></div>
+            <form class="popup" id="username__popup">
                 <h2>Set a username</h2>
                 <input id="username" placeholder="username">
                 <button tpye="submit" class="fas fa-plug"></button>
             </form>
         </section>
+        <section class="popup--wrapper" id="rank__popup--wrapper">
+            <div class="popup--overlay"></div>
+            <div class="popup" id="rank__popup">
+                <h2>Set Message Rank</h2>
+                <button onclick="changeRank(0)">Rank 0</button>
+                <button onclick="changeRank(1)">Rank 1</button>
+                <button onclick="changeRank(2)">Rank 2</button>
+                <button onclick="changeRank(3)">Rank 3</button>
+            </div>
+        </section>
+
     </div>
     <script defer src=" js/index.js "></script>
     <script defer src="js/chat.js "></script>

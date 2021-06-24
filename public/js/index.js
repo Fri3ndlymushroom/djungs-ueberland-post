@@ -1,9 +1,15 @@
 info = {
     username: "",
     userRank: 0,
+    selectedRank: 0,
 }
 
 loaded = false
+
+if (localStorage.getItem("rank")) {
+    info.selectedRank = JSON.parse(localStorage.getItem("selectedRank"))
+    console.log(info.selectedRank)
+}
 
 auth.onAuthStateChanged(async user => {
     if (user) {
@@ -33,6 +39,7 @@ auth.onAuthStateChanged(async user => {
                 // username
                 let username = message.username
                 if (username.length > 10) username = username.slice(2, 10) + "..."
+                console.log(message.rank)
                 if (message.rank <= info.userRank)
                     addMessage(username, message.date, message.message, isSelf, message.rank)
             })

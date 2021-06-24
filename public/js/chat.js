@@ -45,5 +45,17 @@ document.getElementById("chat__input--section").addEventListener("submit", funct
 
 async function sendMessage(message) {
     const sendMessage = firebase.functions().httpsCallable('sendMessage');
-    sendMessage({ message: message, rank: 0 })
+    console.log(info.userRank)
+    sendMessage({ message: message, rank: info.selectedRank })
+}
+
+function openRankPopup() {
+    console.log("s")
+    document.getElementById("rank__popup--wrapper").style.display = "block"
+}
+
+function changeRank(rank) {
+    info.userRselectedRankank = rank
+    localStorage.setItem("selectedRank", rank)
+    window.location.href = "index.html"
 }

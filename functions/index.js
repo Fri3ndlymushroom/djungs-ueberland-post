@@ -18,7 +18,7 @@ exports.sendMessage = functions.https.onCall(async(data, context) => {
     })
 
     if (userRank < data.rank) console.error("permissions not matching")
-
+    console.log(data.rank)
 
     db.collection("messages").doc("messages").update({
         messages: admin.firestore.FieldValue.arrayUnion({
