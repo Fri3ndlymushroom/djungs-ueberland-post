@@ -6,6 +6,9 @@ const db = admin.firestore();
 
 exports.sendMessage = functions.https.onCall(async(data, context) => {
 
+
+    // message
+
     let dateParts = String(admin.firestore.Timestamp.now().toDate()).split(" ")
     let date = dateParts[1] + " " + dateParts[2] + " " + dateParts[4].split(":")[0] + ":" + dateParts[4].split(":")[1]
 

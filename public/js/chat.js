@@ -50,7 +50,6 @@ async function sendMessage(message) {
 }
 
 function openRankPopup() {
-    console.log("s")
     document.getElementById("rank__popup--wrapper").style.display = "block"
 }
 

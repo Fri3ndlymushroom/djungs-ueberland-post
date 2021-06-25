@@ -135,7 +135,6 @@ button:hover {
 .message--right {
     border-radius: var(--borderradius) 0 var(--borderradius) var(--borderradius);
     margin-left: auto;
-    background-color: var(--highlight);
 }
 
 
@@ -176,4 +175,46 @@ button:hover {
 
 .popup--wrapper {
     display: none;
+}
+
+.messageRank0 {
+    background-color: #b8d0eb;
+}
+
+.messageRank1 {
+    background-color: #b298dc;
+}
+
+.messageRank2 {
+    background-color: #a663cc;
+}
+
+.messageRank3 {
+    background-color: #6f2dbd;
+}
+
+#rank__popup {
+    display: flex;
+    flex-direction: column;
+}
+
+#rank__popup>button {
+    margin-top: 30px;
+    height: 50px;
+}
+
+#rank__button--0 {
+    background-color: #b8d0eb;
+}
+
+#rank__button--1 {
+    background-color: #b298dc;
+}
+
+#rank__button--2 {
+    background-color: #a663cc;
+}
+
+#rank__button--3 {
+    background-color: #6f2dbd;
 }
