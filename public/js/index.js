@@ -111,3 +111,7 @@ document.getElementById("username__popup").addEventListener("submit", async func
     document.getElementById("username__popup--wrapper").style.display = "none"
     window.location.href = "index.html"
 })
+
+function logOut() {
+    auth.signOut()
+}

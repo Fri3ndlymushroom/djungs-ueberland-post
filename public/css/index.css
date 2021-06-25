@@ -64,6 +64,12 @@ button:hover {
     border-radius: var(--borderradius--hover);
 }
 
+#header {
+    display: grid;
+    grid-template-columns: minmax(0, 80fr) minmax(0, 20fr);
+    grid-template-rows: minmax(0, 50px);
+}
+
 #content {
     display: grid;
     height: 100%;
@@ -217,4 +223,8 @@ button:hover {
 
 #rank__button--3 {
     background-color: #6f2dbd;
+}
+
+#login__form--google {
+    height: 50px;
 }
